@@ -60,7 +60,7 @@ def main():
         # Prepare the feature vector
         input_data = {
          'mentality_composure' : mentality_composure,
-         'mentality_vision' : mentailty_vision,
+         'mentality_vision' : mentality_vision,
          'power_shot_power' : power_shot_power,
          'movement_reactions' : movement_reactions,
          'skill_ball_control' : skill_ball_control,
