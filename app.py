@@ -46,7 +46,7 @@ def main():
     if st.button("Predict Rating"):
         # Prepare the feature vector
         feature_values = np.array([list(input_data.values())])
-        feature_values = scaler.transform(feature_values)
+        feature_values =ensemble_model.transform(feature_values)
         
         # Make prediction
         prediction = ensemble_model.predict(feature_values)[0]
