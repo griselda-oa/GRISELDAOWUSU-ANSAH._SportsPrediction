@@ -59,15 +59,16 @@ def main():
     if st.button("Predict Rating"):
         # Prepare the feature vector
         input_data = {
-         mentality_composure = 'mentality_composure'
-         mentality_vision = 'mentailty_vision'
-         power_shot_power = 'power_shot_power'
-         movement_reactions = 'movement_reactions'
-         skill_ball_control = 'skill_ball_control'
-         skill_long_passing = 'skill_long_passing'
-         age = 'age'
-         attacking_short_passing = 'attacking_short_passing'
-         potential = 'potential'}
+         'mentality_composure' : entality_composure,
+         'mentality_vision' : mentailty_vision,
+         'power_shot_power' : power_shot_power,
+         'movement_reactions' : movement_reactions,
+         'skill_ball_control' : skill_ball_control,
+         'skill_long_passing' : skill_long_passing,
+         'age': age,
+         'attacking_short_passing' : attacking_short_passing,
+         'potential' : potential,
+        }
         
         # Make prediction
         prediction = predict_player_rating(input_data)
