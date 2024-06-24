@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import numpy as np
 
 file = "fifa_overall_rating_predictor.pkl"
 
