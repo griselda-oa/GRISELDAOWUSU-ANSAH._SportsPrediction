@@ -1,6 +1,6 @@
 import streamlit as st
 import joblib
-import numpy as np
+import pandas as pd
 
 file = "fifa_overall_rating_predictor.pkl"
 
@@ -30,8 +30,8 @@ def preprocess_input_data(input_data):
 # Define prediction function
 def predict_player_rating(input_data):
     processed_input = preprocess_input_data(input_data)
-
-    return ensemble_model.predict(processed_input)[0]
+    predicted = ensemble_model.predict(processed_input)
+    return predicted[0]
 
 
 def main():
