@@ -39,18 +39,38 @@ def main():
     st.title("FIFA Player Overall Rating Prediction")
 
     # User input for features
-    input_data = {}
-    for feature in features:
-        input_data[feature] = st.number_input(feature.capitalize().replace('_', ' '), min_value=0, max_value=100, value=50)
+    mentality_composure = st.number_input('mentality_composure', min_value=0, max_value=100)
+    mentality_vision = st.number_input('mentality_vision', min_value=0, max_value=100)
+    power_shot_power = st.number_input('power_shot_power', min_value=0, max_value=100)
+    movement_reactions = st.number_input('movement_reactions', min_value=0, max_value=100)
+    skill_ball_control = st.number_input('skill_ball_control', min_value=0, max_value=100)
+    skill_long_passing = st.number_input('skill_long_passinge', min_value=0, max_value=100)
+    age = st.number_input('age', min_value=15, max_value=60)
+    attacking_short_passing = st.number_input('attacking_short_passing', min_value=0, max_value=100)
+    potential = st.number_input('potential', min_value=0, max_value=100)
+
+ 
+ 
+    #input_data = {}
+    #for feature in features:
+        #input_data[feature] = st.number_input(feature.capitalize().replace('_', ' '), min_value=0, max_value=100, value=50)
 
     # Predict button
     if st.button("Predict Rating"):
         # Prepare the feature vector
-        feature_values = np.array([list(input_data.values())])
-        feature_values =ensemble_model.transform(feature_values)
+        input_data = {
+         mentality_composure = 'mentality_composure'
+         mentality_vision = 'mentailty_vision'
+         power_shot_power = 'power_shot_power'
+         movement_reactions = 'movement_reactions'
+         skill_ball_control = 'skill_ball_control'
+         skill_long_passing = 'skill_long_passing'
+         age = 'age'
+         attacking_short_passing = 'attacking_short_passing'
+         potential = 'potential'}
         
         # Make prediction
-        prediction = predict_player_rating(feature_values)
+        prediction = predict_player_rating(input_data)
         
         # Display the prediction
         st.success(f"The predicted player overall rating is: {prediction:.2f}")
