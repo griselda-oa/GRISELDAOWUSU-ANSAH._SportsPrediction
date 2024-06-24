@@ -49,7 +49,7 @@ def main():
         feature_values =ensemble_model.transform(feature_values)
         
         # Make prediction
-        prediction = ensemble_model.predict(feature_values)[0]
+        prediction = predict_player_rating(feature_values)
         
         # Display the prediction
         st.success(f"The predicted player overall rating is: {prediction:.2f}")
