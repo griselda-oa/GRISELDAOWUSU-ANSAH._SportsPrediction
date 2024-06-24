@@ -8,7 +8,6 @@ file = "fifa_overall_rating_predictor.pkl"
 
 # Load the trained model and scaler
 ensemble_model = joblib.load(file)
-scaler = joblib.load('scaler.joblib')
 
 # Define features (Replace these with your actual top 13 feature names)
 features = ['potential',
