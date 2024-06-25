@@ -15,7 +15,7 @@ features = [
     'movement_reactions', 'power_shot_power', 'mentality_vision', 'mentality_composure'
 ]
 
-# Define preprocessing function
+# Define the preprocessing function
 def preprocess_input_data(input_data):
     input_df = pd.DataFrame([input_data])
     input_df = input_df[features]
@@ -24,6 +24,12 @@ def preprocess_input_data(input_data):
 # Define prediction function
 def predict_player_rating(input_data):
     processed_input = preprocess_input_data(input_data)
+    
+    # Debugging: Print expected feature names and input data
+    st.write("Expected features:", features)
+    st.write("Input data features:", processed_input.columns.tolist())
+    st.write("Processed input data:", processed_input)
+    
     predicted = ensemble_model.predict(processed_input)
     return predicted[0]
 
