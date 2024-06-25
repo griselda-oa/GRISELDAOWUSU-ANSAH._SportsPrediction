@@ -39,15 +39,15 @@ def main():
     st.title("FIFA Player Overall Rating Prediction")
 
     # User input for features
-    mentality_composure = st.number_input('mentality_composure', min_value=0, max_value=100)
-    mentality_vision = st.number_input('mentality_vision', min_value=0, max_value=100)
-    power_shot_power = st.number_input('power_shot_power', min_value=0, max_value=100)
-    movement_reactions = st.number_input('movement_reactions', min_value=0, max_value=100)
-    skill_ball_control = st.number_input('skill_ball_control', min_value=0, max_value=100)
-    skill_long_passing = st.number_input('skill_long_passinge', min_value=0, max_value=100)
+    mentality_composure = st.slider('mentality_composure', 0, 100)
+    mentality_vision = st.slider('mentality_vision', 0, 100)
+    power_shot_power = st.slider('power_shot_power', 0, 100)
+    movement_reactions = st.slider('movement_reactions', 0, 100)
+    skill_ball_control = st.slider('skill_ball_control', 0, 100)
+    skill_long_passing = st.slider('skill_long_passinge', 0, 100)
     age = st.number_input('age', min_value=15, max_value=60)
-    attacking_short_passing = st.number_input('attacking_short_passing', min_value=0, max_value=100)
-    potential = st.number_input('potential', min_value=0, max_value=100)
+    attacking_short_passing = st.slider('attacking_short_passing', 0, 100)
+    potential = st.slider('potential', 0, 100)
 
  
  
