@@ -10,15 +10,15 @@ except Exception as e:
     st.error(f"Error: {str(e)}")
     st.stop()
 
-common_features = ['potential',
- 'age',
- 'attacking_short_passing',
- 'skill_long_passing',
- 'skill_ball_control',
- 'movement_reactions',
- 'power_shot_power',
- 'mentality_vision',
- 'mentality_composure'
+common_features = ['age', 
+                   'power_shot_power',
+                   'skill_long_passing', 
+                   'mentality_composure', 
+                   'attacking_short_passing', 
+                   'mentality_vision', 
+                   'potential', 
+                   'movement_reactions', 
+                   'skill_ball_control'
 ]
 
 def preprocess_info(data):
@@ -34,28 +34,28 @@ def predict_rating(data):
 st.title("FIFA Player Overall Rating Prediction")
 
 
-potential = st.slider('Potential', 0, 100)
-age = st.number_input('Age', min_value=15, max_value=50)
-attacking_short_passing = st.slider('Attacking Short Passing', 0, 100)
-skill_long_passing = st.slider('Skill Long Passing', 0, 100)
-skill_ball_control = st.slider('Skill Ball Control', 0, 100)
-movement_reactions = st.slider('Movement Reactions', 0, 100)
+age = st.number_input('Age', min_value=15, max_value=60)
 power_shot_power = st.slider('Power Shot Power', 0, 100)
-mentality_vision = st.slider('Mentality Vision', 0, 100)
+skill_long_passing =  st.slider('Skill Long Passing', 0, 100)
 mentality_composure = st.slider('Mentality Composure', 0, 100)
+attacking_short_passing = st.slider('Attacking Short Passing', 0, 100)
+mentality_vision = st.slider('Mentality Vision', 0, 100)
+potential =  st.slider('Potential', 0, 100)
+movement_reactions = st.slider('Movement Reactions', 0, 100)
+skill_ball_control = st.slider('Skill Ball Control', 0, 100)
+
 
 if st.button('Predict Rating'):
     data = {
-        'potential': potential,
         'age': age,
-        'attacking_short_passing': attacking_short_passing,
-        'skill_long_passing': skill_long_passing,
-        'skill_ball_control': skill_ball_control,
-        'movement_reactions': movement_reactions,
         'power_shot_power': power_shot_power,
-        'mentality_vision': mentality_vision,
+        'skill_long_passing': skill_long_passing,
         'mentality_composure': mentality_composure,
-        
+        'attacking_short_passing': attacking_short_passing,
+        'mentality_vision': mentality_vision,
+        'potential': potential,
+        'movement_reactions': movement_reactions,
+        'skill_ball_control': skill_ball_control   
     }
     
     try:
